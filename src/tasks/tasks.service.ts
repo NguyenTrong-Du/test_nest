@@ -8,7 +8,7 @@ export class TasksService {
 
   async getTasks(filterDto: GetTasksFilterDto) {
     try {
-      const tasks = await this.taskRepository.getTasks(filterDto);
+      const tasks = await this.taskRepository.find(filterDto);
       return { err: null, data: tasks };
     } catch (error) {
       return {
