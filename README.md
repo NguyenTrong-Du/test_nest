@@ -48,14 +48,27 @@ $ npm run start:prod
 ## Test
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+                        ├── authentication 
+                        ├── common
+                        │   ├── constants
+                        │   ├── decorators
+                        │   ├── guards
+                        │   ├── interfaces
+                        │   ├── middlewares
+                        │   ├── models
+                        │   ├── validators
+                        ├── configs 
+                        │   ├── app
+                        │   ├── database
+                        │   └── logger
+                        ├── models 
+                        ├── utils 
+                        ├── app.controller.ts 
+                        ├── app.module.ts
+                        ├── app.service.ts
+                        ├── main.ts
+                        ├── package.json
+                        └── README.md 
 ```
 
 ## Support
