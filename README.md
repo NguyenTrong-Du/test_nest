@@ -58,9 +58,6 @@ $ npm run start:prod
                         │   ├── models
                         │   ├── validators
                         ├── configs 
-                        │   ├── app
-                        │   ├── database
-                        │   └── logger
                         ├── models 
                         ├── utils 
                         ├── app.controller.ts 
