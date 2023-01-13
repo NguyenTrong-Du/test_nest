@@ -56,7 +56,7 @@ $ npm run start:prod
                         │   ├── interfaces
                         │   ├── middlewares
                         │   ├── models
-                        │   ├── validators
+                        │   └── validators
                         ├── configs 
                         ├── models 
                         ├── utils 
