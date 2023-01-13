@@ -48,6 +48,7 @@ $ npm run start:prod
 ## Test
 
 ```bash
+                        src
                         ├── authentication 
                         ├── common
                         │   ├── constants
