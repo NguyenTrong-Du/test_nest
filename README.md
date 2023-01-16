@@ -1,84 +1,119 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## 前提条件
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+1. [Node.js](https://nodejs.org/en/) (v16+)をインストールする
+2. [yarn](https://yarnpkg.com/getting-started/install)をインストールする
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## はじめに
 
-## Description
+1. `git clone https://github.com/infini-talk`
+2. `cd infini-talk`
+3. 下記ポートフォワーディングする
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- DEV
 
-## Installation
+  1. ルート ディレクトリに[.env.local](google.com)ファイルを作成する
 
-```bash
-$ npm install
+     ```bash
+     # 依存関係をインストールする
+     $ yarn install
+
+     # コマンド実行
+     $ yarn start:dev
+     ```
+
+  2. [DEV のアカウントと ID](google.com)でログインする
+
+- PRO
+
+  1. ルート ディレクトリに[.env.production.local](google.com)ファイルを作成する
+
+     ```bash
+     # ソースコードをビルドする
+     $ yarn build
+
+     # コマンド実行
+     $ serve -s build
+     ```
+
+  2. [PRO のアカウントと ID](google.com)でログインする
+
+## 配備
+
+- このリポジトリは、Github 　 CI/CD を使用して自動デプロイを実装します
+- Cloudfront サービスを使用して AWS 　 S3 にデプロイする
+- CI/CD の設定: `/.github/deploy.yml`
+- 参照: [Github アクションで CI/CD パイプラインをセットアップする方法](https://medium.com/@schmidphilipp1995/set-up-a-ci-cd-pipeline-for-your-webapp-on-aws-with-github-actions-within-5-minutes-810b10749833)
+
+## Git フロー
+
+1. developから開発ブランチを切ります
+
+- 通常タスク: `git branch feature/<タスク ID>/ブランチ名`
+- バグ修正タスク: `git branch bugfix/<バグ ID>/ブランチ名`
+
+2. ESLintでコードを修正
+3. 実装できたらcommit/push
+4. PR作成(developに向けて下さい)
+5. レビュアーにレビュー依頼(テストケース作成を依頼したときはテストケースのレビューも粂に投げて下さい)
+
+### コミットのメッセージ
+
+`[タスク ID]: <メッセージ>`
+
+```
+fix：バグ修正
+add：新しい機能の追加
+update：機能の更新
+change：仕様変更
+clean：整理（リファクタリングなど）
 ```
 
-## Running the app
+### PR
 
-```bash
-# development
-$ npm run start
+`[タスク ID] <プルリクエストのタイトル>`
 
-# watch mode
-$ npm run start:dev
+## ディレクトリ構造
 
-# production mode
-$ npm run start:prod
+### 概要
+
+```
+src
+├── authentication 
+├── common
+│   ├── constants
+│   ├── decorators
+│   ├── guards
+│   ├── interfaces
+│   ├── middlewares
+│   ├── models
+│   └── validators
+├── configs 
+├── models 
+├── utils 
+├── app.controller.ts 
+├── app.module.ts
+├── app.service.ts
+├── main.ts
+├── package.json
+└── README.md 
 ```
 
-## Test
+### 詳細
 
-```bash
-                        src
-                        ├── authentication 
-                        ├── common
-                        │   ├── constants
-                        │   ├── decorators
-                        │   ├── guards
-                        │   ├── interfaces
-                        │   ├── middlewares
-                        │   ├── models
-                        │   └── validators
-                        ├── configs 
-                        ├── models 
-                        ├── utils 
-                        ├── app.controller.ts 
-                        ├── app.module.ts
-                        ├── app.service.ts
-                        ├── main.ts
-                        ├── package.json
-                        └── README.md 
-```
+- **authentication** - セッションログインハンドラー	
+- **common**
+  - **constants** - 定数の定義
+  - **decorators** - カスタムデコレータ
+  - **guards** - ガード
+  - **interfaces** - Typescriptのインターフェース定義
+  - **middlewares** - ミドルウェア
+  - **models** - カスタムクラス
+  - **validators** - カスタムバリデーター
+- **configs** - 環境にロードされる変数タイプ
+- **models** - すべての関連データモデル
+- **utils** - ヘルパー関数		
+- **package.json** - プロジェクトの依存関係が含まれています
 
-## Support
+## ライセンス
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+このプロジェクトはジェイエムエス・ユナイテッド株式会社に登録されています。
