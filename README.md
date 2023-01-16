@@ -28,9 +28,6 @@
      ```bash
      # ソースコードをビルドする
      $ yarn build
-
-     # コマンド実行
-     $ serve -s build
      ```
 
 ## 配備
