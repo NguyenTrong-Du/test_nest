@@ -11,7 +11,7 @@
 
 - DEV
 
-  1. ルート ディレクトリに[.env.local](google.com)ファイルを作成する
+  ルート ディレクトリに[.env.local](google.com)ファイルを作成する
 
      ```bash
      # 依存関係をインストールする
@@ -21,11 +21,9 @@
      $ yarn start:dev
      ```
 
-  2. [DEV のアカウントと ID](google.com)でログインする
-
 - PRO
 
-  1. ルート ディレクトリに[.env.production.local](google.com)ファイルを作成する
+   ルート ディレクトリに[.env.production.local](google.com)ファイルを作成する
 
      ```bash
      # ソースコードをビルドする
@@ -34,8 +32,6 @@
      # コマンド実行
      $ serve -s build
      ```
-
-  2. [PRO のアカウントと ID](google.com)でログインする
 
 ## 配備
 
